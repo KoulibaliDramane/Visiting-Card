@@ -6,6 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxHeight
@@ -13,6 +14,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Call
 import androidx.compose.material.icons.filled.Email
@@ -51,42 +53,50 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Main(modifier: Modifier = Modifier) {
     Column(modifier = Modifier
-        .fillMaxHeight()
+        .fillMaxSize()
         .background(Color(0xFFd0f6da)),
-        horizontalAlignment = Alignment.CenterHorizontally) {
-        Column(
-            horizontalAlignment = Alignment.CenterHorizontally,
+        horizontalAlignment = Alignment.CenterHorizontally,
+//        verticalArrangement = Arrangement.SpaceBetween
+    ) {
+        Column (
             modifier = Modifier
-                .padding(16.dp)
-                .fillMaxWidth()
-        ) {
-            val image = painterResource(R.drawable.ekko)
-            Image(
-                painter = image,
-                contentDescription = null,
-                modifier = modifier
-                    .background(color = Color(0xFF03045e))
-                    .size(120.dp)
-            )
-            Text(
-                text = stringResource(R.string.name),
-                modifier = Modifier
-                    .padding(top = 10.dp),
-                fontWeight = FontWeight.Bold,
-                fontSize = 24.sp,
-                color = Color.Black
-            )
-            Text(
-                text = stringResource(R.string.title),
-                modifier = Modifier
-                    .padding(top = 10.dp),
-                color = Color(0xFF2ba360),
-                fontWeight = FontWeight.Bold
-            )
+                .weight(1f)
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ){
+            Column(
+                horizontalAlignment = Alignment.CenterHorizontally,
+            ) {
+                val image = painterResource(R.drawable.ekko)
+                Image(
+                    painter = image,
+                    contentDescription = null,
+                    modifier = modifier
+                        .background(color = Color(0xFF03045e))
+                        .size(250.dp)
+                )
+                Text(
+                    text = stringResource(R.string.name),
+                    modifier = Modifier
+                        .padding(top = 10.dp),
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 24.sp,
+                    color = Color.Black
+                )
+                Text(
+                    text = stringResource(R.string.title),
+                    modifier = Modifier
+                        .padding(top = 10.dp),
+                    color = Color(0xFF2ba360),
+                    fontWeight = FontWeight.Bold
+                )
+            }
         }
         Column(
             modifier = Modifier
                 .padding(16.dp)
+                .padding(bottom = 20.dp)
         ) {
             Row (
                 modifier = Modifier.padding(bottom = 10.dp)
@@ -98,7 +108,7 @@ fun Main(modifier: Modifier = Modifier) {
                     tint = Color(0xFF2ba360)
                 )
                 Text(
-                    text = "+225 07 49 62 59 77",
+                    text = stringResource(R.string.contacte),
                     color = Color.Black
                 )
             }

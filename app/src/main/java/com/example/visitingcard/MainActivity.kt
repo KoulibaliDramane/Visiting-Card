@@ -25,6 +25,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -54,7 +56,13 @@ class MainActivity : ComponentActivity() {
 fun Main(modifier: Modifier = Modifier) {
     Column(modifier = Modifier
         .fillMaxSize()
-        .background(Color(0xFFd0f6da)),
+        .background(
+            brush = Brush.linearGradient(
+                colors = listOf(Color.Red, Color.Black),
+                start = Offset(-2000f, -2000f),
+                end = Offset.Infinite
+            )
+        ),
         horizontalAlignment = Alignment.CenterHorizontally,
 //        verticalArrangement = Arrangement.SpaceBetween
     ) {
@@ -68,7 +76,7 @@ fun Main(modifier: Modifier = Modifier) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                val image = painterResource(R.drawable.ekko)
+                val image = painterResource(R.drawable.miles_morales_7680x4320_17154)
                 Image(
                     painter = image,
                     contentDescription = null,
@@ -82,13 +90,13 @@ fun Main(modifier: Modifier = Modifier) {
                         .padding(top = 10.dp),
                     fontWeight = FontWeight.Bold,
                     fontSize = 24.sp,
-                    color = Color.Black
+                    color = Color.White
                 )
                 Text(
                     text = stringResource(R.string.title),
                     modifier = Modifier
                         .padding(top = 10.dp),
-                    color = Color(0xFF2ba360),
+                    color = Color.White,
                     fontWeight = FontWeight.Bold
                 )
             }
@@ -105,11 +113,11 @@ fun Main(modifier: Modifier = Modifier) {
                     imageVector = Icons.Filled.Call,
                     contentDescription = null,
                     modifier = Modifier.padding(end = 10.dp),
-                    tint = Color(0xFF2ba360)
+                    tint = Color.White
                 )
                 Text(
                     text = stringResource(R.string.contacte),
-                    color = Color.Black
+                    color = Color.White
                 )
             }
             Row (
@@ -119,11 +127,11 @@ fun Main(modifier: Modifier = Modifier) {
                     imageVector = Icons.Filled.Share,
                     contentDescription = null,
                     modifier = Modifier.padding(end = 10.dp),
-                    tint = Color(0xFF2ba360)
+                    tint = Color.White
                 )
                 Text(
                     text = stringResource(R.string.link),
-                    color = Color.Black
+                    color = Color.White
                 )
             }
             Row (
@@ -133,11 +141,11 @@ fun Main(modifier: Modifier = Modifier) {
                     imageVector = Icons.Filled.Email,
                     contentDescription = null,
                     modifier = Modifier.padding(end = 10.dp),
-                    tint = Color(0xFF2ba360)
+                    tint = Color.White
                 )
                 Text(
                     text = stringResource(R.string.devemail),
-                    color = Color.Black
+                    color = Color.White
                 )
             }
         }

@@ -62,87 +62,89 @@ fun Main(modifier: Modifier = Modifier) {
         ),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Column (
+
+        Column(
             modifier = Modifier
                 .weight(1f)
                 .fillMaxSize(),
             verticalArrangement = Arrangement.Center,
             horizontalAlignment = Alignment.CenterHorizontally
-        ){
-            Column(
-                horizontalAlignment = Alignment.CenterHorizontally,
-            ) {
-                val image = painterResource(R.drawable.miles)
-                Image(
-                    painter = image,
-                    contentDescription = null,
-                    modifier = modifier
-                        .background(color = Color.Black)
-                        .size(250.dp)
-                )
-                Text(
-                    text = stringResource(R.string.name),
-                    modifier = Modifier
-                        .padding(top = 10.dp),
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 24.sp,
-                    color = Color.White
-                )
-                Text(
-                    text = stringResource(R.string.title),
-                    modifier = Modifier
-                        .padding(top = 10.dp),
-                    color = Color.White,
-                    fontWeight = FontWeight.Bold
-                )
-            }
+        ) {
+            val image = painterResource(R.drawable.miles)
+            Image(
+                painter = image,
+                contentDescription = null,
+                modifier = modifier
+                    .background(color = Color.Black)
+                    .size(250.dp)
+            )
+            Text(
+                text = stringResource(R.string.name),
+                modifier = Modifier
+                    .padding(top = 10.dp),
+                fontWeight = FontWeight.Bold,
+                fontSize = 24.sp,
+                color = Color.White
+            )
+            Text(
+                text = stringResource(R.string.title),
+                modifier = Modifier
+                    .padding(top = 10.dp),
+                color = Color.White,
+                fontWeight = FontWeight.Bold
+            )
         }
+
         Column(
             modifier = Modifier
-                .padding(16.dp)
-                .padding(bottom = 20.dp)
+                .fillMaxSize()
+                .weight(0.3f),
+            verticalArrangement = Arrangement.Center,
+            horizontalAlignment = Alignment.CenterHorizontally
         ) {
-            Row (
-                modifier = Modifier.padding(bottom = 10.dp)
-            ){
-                Icon(
-                    imageVector = Icons.Filled.Call,
-                    contentDescription = null,
-                    modifier = Modifier.padding(end = 10.dp),
-                    tint = Color.White
-                )
-                Text(
-                    text = stringResource(R.string.contacte),
-                    color = Color.White
-                )
-            }
-            Row (
-                modifier = Modifier.padding(bottom = 10.dp)
-            ){
-                Icon(
-                    imageVector = Icons.Filled.Share,
-                    contentDescription = null,
-                    modifier = Modifier.padding(end = 10.dp),
-                    tint = Color.White
-                )
-                Text(
-                    text = stringResource(R.string.link),
-                    color = Color.White
-                )
-            }
-            Row (
-                modifier = Modifier.padding(bottom = 10.dp)
-            ){
-                Icon(
-                    imageVector = Icons.Filled.Email,
-                    contentDescription = null,
-                    modifier = Modifier.padding(end = 10.dp),
-                    tint = Color.White
-                )
-                Text(
-                    text = stringResource(R.string.devemail),
-                    color = Color.White
-                )
+            Column {
+                Row(
+                    modifier = Modifier.padding(bottom = 5.dp, top = 5.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Filled.Call,
+                        contentDescription = null,
+                        modifier = Modifier.padding(end = 10.dp),
+                        tint = Color.White
+                    )
+                    Text(
+                        text = stringResource(R.string.contacte),
+                        color = Color.White
+                    )
+                }
+                Row(
+                    modifier = Modifier.padding(bottom = 5.dp, top = 5.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Filled.Share,
+                        contentDescription = null,
+                        modifier = Modifier.padding(end = 10.dp),
+                        tint = Color.White
+                    )
+                    Text(
+                        text = stringResource(R.string.link),
+                        color = Color.White
+                    )
+                }
+                Row(
+                    modifier = Modifier.padding(bottom = 5.dp, top = 5.dp)
+                ) {
+                    Icon(
+                        imageVector = Icons.Filled.Email,
+                        contentDescription = null,
+                        modifier = Modifier.padding(end = 10.dp),
+                        tint = Color.White
+                    )
+                    Text(
+                        text = stringResource(R.string.devemail),
+                        color = Color.White
+                    )
+                }
             }
         }
     }

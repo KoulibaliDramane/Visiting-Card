@@ -55,13 +55,12 @@ fun Main(modifier: Modifier = Modifier) {
         .fillMaxSize()
         .background(
             brush = Brush.linearGradient(
-                colors = listOf(Color.Red, Color.Black),
-                start = Offset(-2000f, -2000f),
+                colors = listOf(Color(0xFFd9042b), Color.Black),
+                start = Offset(-3000f, -2500f),
                 end = Offset.Infinite
             )
         ),
-        horizontalAlignment = Alignment.CenterHorizontally,
-//        verticalArrangement = Arrangement.SpaceBetween
+        horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Column (
             modifier = Modifier
@@ -73,12 +72,12 @@ fun Main(modifier: Modifier = Modifier) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
             ) {
-                val image = painterResource(R.drawable.miles_morales_7680x4320_17154)
+                val image = painterResource(R.drawable.miles)
                 Image(
                     painter = image,
                     contentDescription = null,
                     modifier = modifier
-                        .background(color = Color(0xFF03045e))
+                        .background(color = Color.Black)
                         .size(250.dp)
                 )
                 Text(
